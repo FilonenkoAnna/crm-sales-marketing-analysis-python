@@ -339,7 +339,7 @@ To complement the pandas-based analysis, a set of PostgreSQL queries was built o
 
 Results were cross-checked against the pandas notebooks — for example, source-level conversion figures (Organic 9.8%, Facebook Ads 4,423 leads) and the direction of the SLA-conversion relationship both matched independently of the calculation method.
 
-See [`sql/README.md`](sql/README.md) for full query documentation, results, and setup instructions.
+See [`sql/sql_README.md`](sql/sql_README.md) for full query documentation, results, and setup instructions.
 
 ---
 
