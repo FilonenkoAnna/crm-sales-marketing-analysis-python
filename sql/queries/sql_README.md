@@ -4,7 +4,7 @@ This folder contains a set of PostgreSQL queries built on top of the same cleane
 
 The goal is not to duplicate the pandas-based analysis, but to demonstrate the same underlying business questions (and one new one) solved with SQL — joins, common table expressions (CTEs), and window functions.
 
-> **Data privacy:** as with the rest of the project, the original CRM data and the resulting local database are not included in this public repository. See "Reproducing locally" below.
+> **Data privacy:** as with the rest of the project, the original CRM data and the resulting local database are not included in this public repository.
 
 ---
 
