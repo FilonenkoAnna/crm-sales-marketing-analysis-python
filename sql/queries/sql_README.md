@@ -8,45 +8,6 @@ The goal is not to duplicate the pandas-based analysis, but to demonstrate the s
 
 ---
 
-## Setup
-
-The five cleaned tables (`contacts`, `calls`, `spend`, `deals`, `buyers`) are loaded into a local PostgreSQL database from the CSV exports produced by the cleaning notebooks (`01`–`05`).
-
-```python
-from pathlib import Path
-import pandas as pd
-from sqlalchemy import URL, create_engine
-
-PROCESSED_DIR = Path("data/processed")
-
-url = URL.create(
-    drivername="postgresql+psycopg2",
-    username="postgres",
-    password="YOUR_PASSWORD",
-    host="localhost",
-    port=5432,
-    database="crm_project",
-)
-engine = create_engine(url)
-
-files = {
-    "contacts": "contacts_clean.csv",
-    "calls": "calls_clean.csv",
-    "spend": "spend_clean.csv",
-    "deals": "deals_clean.csv",
-    "buyers": "buyers.csv",
-}
-
-for table_name, filename in files.items():
-    df = pd.read_csv(PROCESSED_DIR / filename)
-    df.to_sql(table_name, engine, if_exists="replace", index=False)
-    print(f"{table_name}: loaded {len(df)} rows, {df.shape[1]} cols")
-```
-
-Table structure is inferred automatically from each CSV by `to_sql()`. Row counts loaded were verified against the cleaning notebooks: 18,510 contacts / 92,599 calls / 19,862 spend records / 19,822 deals / 836 buyers.
-
----
-
 ## Queries
 
 | File | Business Question | Technique |
