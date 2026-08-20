@@ -423,7 +423,7 @@ crm-sales-marketing-analysis-python/
 │   └── 12_unit_economics_experiments.ipynb
 │
 └── sql/
-    ├── README.md
+    ├── sql_README.md
     └── queries/
         ├── 01_funnel_and_conversion.sql
         ├── 02_sla_response_time.sql
